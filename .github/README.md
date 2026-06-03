@@ -31,6 +31,10 @@ This folder contains the project-shared Copilot customization stack for Secret P
 
 Hooks are configured as warning-only guardrails and do not block edits by default.
 
+Current repo hooks include contract drift, ID collision, third-party edit warnings, and a commit-message reminder hook.
+
+Git commit messages are also enforced by `.githooks/commit-msg` when `core.hooksPath` is set via `npm run setup:hooks`.
+
 ## Lint And Format Hooks
 
 This repository also includes commit-time formatting and lint auto-fix for JavaScript/TypeScript and common text configs.

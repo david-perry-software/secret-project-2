@@ -8,17 +8,17 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Gameplay
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - Projectile
+  - Pickup
+  - Environment
+  - Hurtbox
+  - Hitbox
+  - Interactable
   - 
   - 
   - 
@@ -40,4 +40,22 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 100
+    locked: 0
+  - name: Ground
+    uniqueID: 200
+    locked: 0
+  - name: Actors
+    uniqueID: 300
+    locked: 0
+  - name: Projectiles
+    uniqueID: 400
+    locked: 0
+  - name: VFX
+    uniqueID: 500
+    locked: 0
+  - name: UI
+    uniqueID: 600
     locked: 0

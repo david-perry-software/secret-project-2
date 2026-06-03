@@ -1,0 +1,42 @@
+#!/bin/sh
+set -e
+
+MESSAGE_FILE="$1"
+
+if [ -z "$MESSAGE_FILE" ] || [ ! -f "$MESSAGE_FILE" ]; then
+  printf >&2 "\nError: commit message file was not provided to the commit-msg hook.\n\n"
+  exit 1
+fi
+
+SUBJECT_LINE=$(sed -n '1{/^#/d;p;}' "$MESSAGE_FILE" | awk 'NF { print; exit }')
+
+if [ -z "$SUBJECT_LINE" ]; then
+  printf >&2 "\nError: commit message subject is empty. Use Conventional Commit style, for example: feat(bootstrap): add Unity debug workflow\n\n"
+  exit 1
+fi
+
+case "$SUBJECT_LINE" in
+  Merge\ *|Revert\ *)
+    exit 0
+    ;;
+esac
+
+case "$SUBJECT_LINE" in
+  feat\(*\):\ *|fix\(*\):\ *|refactor\(*\):\ *|chore\(*\):\ *|docs\(*\):\ *|test\(*\):\ *|build\(*\):\ *|ci\(*\):\ *|perf\(*\):\ *|style\(*\):\ *)
+    ;;
+  feat:\ *|fix:\ *|refactor:\ *|chore:\ *|docs:\ *|test:\ *|build:\ *|ci:\ *|perf:\ *|style:\ *)
+    ;;
+  *)
+    printf >&2 "\nError: commit subject does not match Conventional Commit style.\n"
+    printf >&2 "Expected format: type(scope): summary\n"
+    printf >&2 "Example: feat(bootstrap): add Unity debug workflow\n\n"
+    exit 1
+    ;;
+esac
+
+if [ ${#SUBJECT_LINE} -gt 72 ]; then
+  printf >&2 "\nError: commit subject is too long (%s characters). Keep it at 72 or fewer.\n\n" "${#SUBJECT_LINE}"
+  exit 1
+fi
+
+exit 0
