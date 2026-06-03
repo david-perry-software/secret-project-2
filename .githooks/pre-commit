@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+if ! command -v npx >/dev/null 2>&1; then
+  printf "\nError: npx was not found on PATH. Install Node.js 18+ and run npm install.\n\n" >&2
+  exit 1
+fi
+
+printf "Running lint-staged (ESLint --fix + Prettier --write on staged files)...\n"
+npx --no-install lint-staged
