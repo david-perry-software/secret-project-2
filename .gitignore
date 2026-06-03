@@ -1,0 +1,48 @@
+# Unity generated folders (match in nested project folders too)
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+
+# Unity generated files
+**/[Aa]ssets/AssetStoreTools*
+**/[Aa]ssets/AddressableAssetsData/*/*.bin*
+**/[Aa]ssets/StreamingAssets/aa.meta
+**/[Aa]ssets/StreamingAssets/aa/*
+
+# IDE and OS files
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.DS_Store
+Thumbs.db
+
+# Unity cache and package artifacts
+**/[Aa]ssets/Plugins/Editor/JetBrains*
+**/[Aa]ssets/Plugins/Editor/EditorInstance.json
+**/[Aa]ssets/Plugins/Editor/EditorNodeCache.asset
+
+# Crash reports
+sysinfo.txt
+
+# Rider
+**/[Aa]ssets/Plugins/Editor/JetBrains*
+*.DotSettings.user
