@@ -1,0 +1,21 @@
+# Unity heavy/generated folders
+**/Library/**
+**/Temp/**
+**/Logs/**
+**/Build/**
+**/Builds/**
+**/obj/**
+
+# Unity asset formats that should not be touched by prettier
+**/*.asset
+**/*.meta
+**/*.unity
+**/*.prefab
+**/*.anim
+**/*.controller
+**/*.overrideController
+**/*.mat
+**/*.spriteatlas
+**/*.lighting
+**/*.physicMaterial
+**/*.renderTexture

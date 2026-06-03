@@ -1,0 +1,30 @@
+{
+  "name": "secret-project-2-tooling",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Commit-time lint and formatting automation for repository text/code files.",
+  "scripts": {
+    "setup:hooks": "git config core.hooksPath .githooks",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts,mts,cts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "globals": "^15.3.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.3.2",
+    "typescript-eslint": "^8.0.0"
+  }
+}
